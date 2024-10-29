@@ -18,7 +18,6 @@ http.interceptors.request.use(config => {
 
 http.interceptors.response.use(response => response, async error => {
     if (error.response && error.response.status === 401) {
-      console.log('aqui')
         router.push({path: '/login'})
     }
     return Promise.reject(error);
